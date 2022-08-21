@@ -4,7 +4,7 @@ with sync_playwright() as p:
     page = browser.new_page()
     page.goto("https://www.nytimes.com/books/best-sellers/combined-print-and-e-book-fiction/", timeout = 100000)
     html_articles = []
-    for i in range(3):
+    for i in range(5):
         articles = page.locator("ol[data-testid='topic-list']")
         html_articles.append(articles.inner_html())
         page.locator("nav[aria-labelledby='best-sellers-navigation'] a").nth(0).click()
